@@ -13,6 +13,16 @@
         }
     }
 
+    function arrayCopy(x) {
+        var a = x.length,
+            b = [],
+            i;
+        for (i = 0; i < a; i += 1) {
+            b[i] = x[i];
+        }
+        return b;
+    }
+
     var solve1 = function () {
         var num1 = document.getElementById("q1i1").value,
             num2 = document.getElementById("q1i2").value;
@@ -59,14 +69,45 @@
     };
 
     var solve2 = function () {
+        var num1 = document.getElementById("q2i1").value,
+            num2 = document.getElementById("q2i2").value,
+            num3 = document.getElementById("q2i3").value;
+
+        if (!isInt(num1)) {
+            document.getElementById("q2i1Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (!isInt(num2)) {
+            document.getElementById("q2i2Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (!isInt(num3)) {
+            document.getElementById("q2i3Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+
+        if (isInt(num1) && isInt(num2) && isInt(num3)) {
+            var numArray = [num1, num2, num3],
+                numArrayAscend = arrayCopy(numArray),
+                numArrayDescend = arrayCopy(numArray);
+            numArrayAscend.sort(function (a, b) { return a - b; });
+            numArrayDescend.sort(function (a, b) { return b - a; });
+            window.alert("Ascending: " + numArrayAscend + "\nDescending: " + numArrayDescend);
+            document.getElementById("q2i1").value = "";
+            document.getElementById("q2i2").value = "";
+            document.getElementById("q2i3").value = "";
+            document.getElementById("q2i1Error").innerHTML = "";
+            document.getElementById("q2i2Error").innerHTML = "";
+            document.getElementById("q2i3Error").innerHTML = "";
+        }
+    };
+
+    var solve3 = function () {
         var num1 = document.getElementById("q1i1").value,
             num2 = document.getElementById("q1i2").value;
     };
 
     document.getElementById("submit1").addEventListener("click", solve1);
     document.getElementById("clear1").addEventListener("click", clear1);
-    /*
     document.getElementById("submit2").addEventListener("click", solve2);
+    /*
     document.getElementById("submit3").addEventListener("click", solve3);
     document.getElementById("submit4").addEventListener("click", solve4);
     document.getElementById("submit5").addEventListener("click", solve5);
