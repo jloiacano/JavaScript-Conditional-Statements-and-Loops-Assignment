@@ -87,8 +87,12 @@
             var numArray = [num1, num2, num3],
                 numArrayAscend = arrayCopy(numArray),
                 numArrayDescend = arrayCopy(numArray);
-            numArrayAscend.sort(function (a, b) { return a - b; });
-            numArrayDescend.sort(function (a, b) { return b - a; });
+            numArrayAscend.sort(function (a, b) {
+                return a - b;
+            });
+            numArrayDescend.sort(function (a, b) {
+                return b - a;
+            });
             window.alert("Ascending: " + numArrayAscend + "\nDescending: " + numArrayDescend);
             document.getElementById("q2i1").value = "";
             document.getElementById("q2i2").value = "";
@@ -100,6 +104,47 @@
     };
 
     var solve3 = function () {
+        var num1 = document.getElementById("q3i1").value,
+            num2 = document.getElementById("q3i2").value,
+            num3 = document.getElementById("q3i3").value,
+            num4 = document.getElementById("q3i4").value,
+            num5 = document.getElementById("q3i5").value,
+            numArray = [num1, num2, num3, num4, num5],
+            a = numArray.length - 1,
+            i,
+            biggest = 0;
+        if (!isInt(num1)) {
+            document.getElementById("q3i1Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (!isInt(num2)) {
+            document.getElementById("q3i2Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (!isInt(num3)) {
+            document.getElementById("q3i3Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (!isInt(num4)) {
+            document.getElementById("q3i4Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (!isInt(num5)) {
+            document.getElementById("q3i5Error").innerHTML = "* MUST BE AN INTEGER";
+        }
+        if (isInt(num1) && isInt(num2) && isInt(num3) && isInt(num4) && isInt(num5)) {
+
+            for (i = 0; i < a; i += 1) {
+                biggest = Math.max(biggest, numArray[i]);
+                window.console.log("a-" + biggest + "\t\tb-" + numArray[i + 1] + "\t\t" + biggest);
+            }
+            window.alert(biggest);
+
+            document.getElementById("q3i1").value = "";
+            document.getElementById("q3i2").value = "";
+            document.getElementById("q3i3").value = "";
+            document.getElementById("q3i4").value = "";
+            document.getElementById("q3i5").value = "";
+        }
+    };
+
+    var solve4 = function () {
         var num1 = document.getElementById("q1i1").value,
             num2 = document.getElementById("q1i2").value;
     };
@@ -107,6 +152,7 @@
     document.getElementById("submit1").addEventListener("click", solve1);
     document.getElementById("clear1").addEventListener("click", clear1);
     document.getElementById("submit2").addEventListener("click", solve2);
+    document.getElementById("submit3").addEventListener("click", solve3);
     /*
     document.getElementById("submit3").addEventListener("click", solve3);
     document.getElementById("submit4").addEventListener("click", solve4);
