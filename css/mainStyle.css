@@ -4,17 +4,17 @@ body {
   font-family: sans-serif;
   font-size: 14px;
 }
-.solution {
+.task {
   border: 1px solid black;
   margin: 1.5em;
   border-radius: 0.5em;
   padding: 1em;
   background-color: white;
 }
-.solution .question {
+.task .question {
   color: dimgray;
 }
-.solution .questionTitle {
+.task .questionTitle {
   display: inline-block;
   color: black;
   position: relative;
@@ -24,20 +24,24 @@ body {
   border-radius: 0.25em;
   background-color: aqua;
 }
-.solution .formLabel {
+.task .formLabel {
   display: inline-block;
   width: 10em;
   color: black;
 }
-.solution .answer {
+.task .answer {
   color: red;
   padding-left: 1em;
 }
-.solution .errorText {
+.task .errorText {
   padding-left: 1em;
   color: red;
 }
-.solution .clearButton {
+.task .clearButton {
   display: none;
   margin-left: 1em;
+}
+.task .results {
+  padding: 1em;
+  color: black;
 }

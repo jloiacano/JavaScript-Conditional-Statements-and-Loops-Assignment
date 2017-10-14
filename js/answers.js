@@ -144,7 +144,78 @@
         }
     };
 
+    var clear4 = function () {
+        document.getElementById("task4Results").innerHTML = "";
+        document.getElementById("clear4").style.display = "none";
+    };
+
     var solve4 = function () {
+        var htmlResults = "",
+            i;
+        for (i = 0; i <= 15; i += 1) {
+            if (i % 2 === 0) {
+                htmlResults += "the current number is: " + i + ", and it is even <br />";
+                window.console.log("the current number is " + i + ", and it is even");
+            } else {
+                htmlResults += "the current number is: " + i + ", and it is odd <br />";
+                window.console.log("the current number is " + i + ", and it is odd");
+            }
+        }
+
+        document.getElementById("task4Results").innerHTML = htmlResults;
+        document.getElementById("clear4").style.display = "inline";
+    };
+
+    var clear5 = function () {
+        document.getElementById("task5Results").innerHTML = "";
+        document.getElementById("clear5").style.display = "none";
+        document.getElementById("secondClear5").style.display = "none";
+    };
+
+
+    var solve5 = function () {
+        var htmlResults = "",
+            i;
+        for (i = 1; i <= 100; i += 1) {
+            if ((i % 3 === 0) && (i % 5 === 0)) {
+                htmlResults += "FizzBuzz <br />";
+                window.console.log("FizzBuzz");
+            } else if (i % 3 === 0) {
+                htmlResults += "Fizz <br />";
+                window.console.log("Fizz");
+            } else if (i % 5 === 0) {
+                htmlResults += "Buzz <br />";
+                window.console.log("Buzz");
+            } else {
+                htmlResults += i + "<br />";
+                window.console.log(i);
+            }
+        }
+
+        document.getElementById("task5Results").innerHTML = htmlResults;
+        document.getElementById("clear5").style.display = "inline";
+        document.getElementById("secondClear5").style.display = "inline";
+    };
+
+    var clear6 = function () {
+        document.getElementById("task6Results").innerHTML = "";
+        document.getElementById("clear6").style.display = "none";
+    };
+
+    var solve6 = function () {
+        var htmlResults = 0,
+            i;
+        for (i = 1; i <= 1000; i += 1) {
+            if ((i % 3 === 0) && (i % 5 === 0)) {
+                htmlResults += 1;
+            }
+        }
+        document.getElementById("task6Results").innerHTML = "There are " + htmlResults + " numbers between 1 and 1000 that are evenly divisible by three.";
+        window.console.log("There are " + htmlResults + " numbers between 1 and 1000 that are evenly divisible by three.");
+        document.getElementById("clear6").style.display = "inline";
+    };
+
+    var solve7 = function () {
         var num1 = document.getElementById("q1i1").value,
             num2 = document.getElementById("q1i2").value;
     };
@@ -153,10 +224,14 @@
     document.getElementById("clear1").addEventListener("click", clear1);
     document.getElementById("submit2").addEventListener("click", solve2);
     document.getElementById("submit3").addEventListener("click", solve3);
-    /*
-    document.getElementById("submit3").addEventListener("click", solve3);
     document.getElementById("submit4").addEventListener("click", solve4);
+    document.getElementById("clear4").addEventListener("click", clear4);
     document.getElementById("submit5").addEventListener("click", solve5);
+    document.getElementById("clear5").addEventListener("click", clear5);
+    document.getElementById("secondClear5").addEventListener("click", clear5);
+    document.getElementById("submit6").addEventListener("click", solve6);
+    document.getElementById("clear6").addEventListener("click", clear6);
+    /*
     document.getElementById("submit6").addEventListener("click", solve6);
     document.getElementById("submit7").addEventListener("click", solve7);
     document.getElementById("submit8").addEventListener("click", solve8);
